@@ -15,7 +15,12 @@
 
 //4.20
 //restrictions
-//remember that detect language needs confidence of 1, meaning that the messages need to be longer than usual (wait this might not be true nvm) 
+//remember that detect language needs confidence of 1, meaning that the messages need to be longer than usual (wait this might not be true nvm)
+
+//4.21
+//Cool things we might want
+//For Select language, perhaps use detet language on previous messages (sent by the user) to tell the message we need to translate into
+//Send OG message in new text color
 import UIKit
 import Messages
 
@@ -42,14 +47,47 @@ class MessagesViewController: MSMessagesAppViewController {
                 DispatchQueue.main.async { [unowned self] in
                     self.translateText.text = "\(translation)"
                     
+                    //test code
+                    let layout1 = MSMessageTemplateLayout()
+                    layout1.caption = self.originalText.text
+                    
+                    let message1 = MSMessage()
+                    message1.layout = layout1
+                    
+                    self.activeConversation?.insert(message1, completionHandler: nil)
+                    //creates an imessage object and allows user to send
+                    let layout = MSMessageTemplateLayout()
+                    layout.caption = translation
+                    
+                    let message = MSMessage()
+                    message.layout = layout
+                    
+                    self.activeConversation?.insert(message, completionHandler: nil)
                 }
             }
+            
+            
             
             
         })
         
     }
+    //IT WORKS!!! (basically opens up another view to work with, for select language)
+    //    @IBAction func selectLanguageButton(_ sender: Any) {
+    //
+    //
+    //    }
+    //
     
+    @IBAction func SelectLanguageButton(_ sender: Any) {
+        guard let vc = storyboard?.instantiateViewController(identifier:
+            "selectLanguage") else {
+                print("failed")
+                return
+        }
+        
+        present(vc, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -127,3 +165,9 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
 }
+//
+//class selectLanguageController: UIViewController{
+//
+//
+//
+//}
