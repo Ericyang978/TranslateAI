@@ -47,17 +47,11 @@ class MessagesViewController: MSMessagesAppViewController {
                 DispatchQueue.main.async { [unowned self] in
                     self.translateText.text = "\(translation)"
                     
-                    //test code
-                    let layout1 = MSMessageTemplateLayout()
-                    layout1.caption = self.originalText.text
-                    
-                    let message1 = MSMessage()
-                    message1.layout = layout1
-                    
-                    self.activeConversation?.insert(message1, completionHandler: nil)
+          
                     //creates an imessage object and allows user to send
                     let layout = MSMessageTemplateLayout()
-                    layout.caption = translation
+                    //maybe dont force unwrap idk
+                    layout.caption = "\(self.originalText.text!) \n \(translation)"
                     
                     let message = MSMessage()
                     message.layout = layout
