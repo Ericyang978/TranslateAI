@@ -33,7 +33,7 @@ class MessagesViewController: MSMessagesAppViewController {
     
     @IBAction func translateButton(_ sender: Any) {
         
-        //detect language (finds the language)
+        //detect language (finds the language) (might have an error with delay of return, not sure though)
         TranslationManager.shared.detectLanguage(forText: self.originalText.text!) { (language) in}
         
         //Sends the text in text box to the translate manager, to be translated
@@ -42,11 +42,13 @@ class MessagesViewController: MSMessagesAppViewController {
         //Takes the translated string, and sets the translateText equal to that
         TranslationManager.shared.translate(completion: { (translation) in
             
+            print("hello translation 1")
+        
             if let translation = translation {
+                print("hello translation 2")
                 
                 DispatchQueue.main.async { [unowned self] in
                     self.translateText.text = "\(translation)"
-                    
           
                     //creates an imessage object and allows user to send
                     let layout = MSMessageTemplateLayout()

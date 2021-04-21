@@ -23,10 +23,8 @@ class TranslationManager: NSObject {
     
 
     static let shared = TranslationManager()
-
     var sourceLanguageCode: String?
-
-    private let apiKey = "AIzaSyD40An6j2uDmJ_F6um_rTTPvqF3Hj5OYo8"
+    private let apiKey = "AIzaSyBVFNN3FFseO1tcmsGUD7FtQc5tQPatH3g"
 
     
 
@@ -270,9 +268,8 @@ class TranslationManager: NSObject {
 
     var textToTranslate: String?
 
-//    var targetLanguageCode: String?
+    var targetLanguageCode: String?
 
-    let targetLanguageCode: String? = "es"
 
 
 
