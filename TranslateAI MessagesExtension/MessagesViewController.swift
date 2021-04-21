@@ -13,48 +13,50 @@
 // make sure to make the UI gets better
 //try to make an imessage object rather than just using copy paste
 
+//4.20
+//restrictions
+//remember that detect language needs confidence of 1, meaning that the messages need to be longer than usual (wait this might not be true nvm) 
 import UIKit
 import Messages
 
 class MessagesViewController: MSMessagesAppViewController {
     
     //New Code
-
+    
     @IBOutlet weak var originalText: UITextField!
     @IBOutlet weak var translateText: UITextView!
     
     @IBAction func translateButton(_ sender: Any) {
         
-        //variable x = "no"
-        print(originalText.text)
+        //detect language (finds the language)
+        TranslationManager.shared.detectLanguage(forText: self.originalText.text!) { (language) in}
+        
+        //Sends the text in text box to the translate manager, to be translated
+        TranslationManager.shared.textToTranslate = originalText.text
+        
+        //Takes the translated string, and sets the translateText equal to that
+        TranslationManager.shared.translate(completion: { (translation) in
             
-            TranslationManager.shared.textToTranslate = originalText.text
-            
-            
-            TranslationManager.shared.translate(completion: { (translation) in
-
-                print("hello1")
-                    if let translation = translation {
-                        
-                        DispatchQueue.main.async { [unowned self] in
-                            self.translateText.text = "\(translation)"
-                            print(self.translateText.text)
-
-                        }
-                }
+            if let translation = translation {
                 
-
-            })
-
+                DispatchQueue.main.async { [unowned self] in
+                    self.translateText.text = "\(translation)"
+                    
+                }
+            }
+            
+            
+        })
+        
     }
     
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //        originalText.delegate = self
         
-//        print("sups ")
+        //        print("sups ")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -67,7 +69,7 @@ class MessagesViewController: MSMessagesAppViewController {
         return true
     }
     
-
+    
     
     // Do any additional setup after loading the view.
     
