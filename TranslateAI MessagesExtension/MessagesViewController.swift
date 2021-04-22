@@ -52,15 +52,14 @@ class MessagesViewController: MSMessagesAppViewController {
                     let layout = MSMessageTemplateLayout()
                     //maybe dont force unwrap idk
                     layout.caption = "\(self.originalText.text!) \n \(translation)"
-                    
+            
                     let message = MSMessage()
                     message.layout = layout
                     
                     self.activeConversation?.insert(message, completionHandler: nil)
                 }
+                self.dismiss()
             }
-            
-            
             
             
         })
@@ -93,6 +92,7 @@ class MessagesViewController: MSMessagesAppViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         originalText.resignFirstResponder()
+        
     }
     
     

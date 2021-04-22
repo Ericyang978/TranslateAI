@@ -118,7 +118,7 @@ extension LanguagesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
           tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
              TranslationManager.shared.targetLanguageCode = TranslationManager.shared.supportedLanguages[indexPath.row].code
-//             performSegue(withIdentifier: "TranslationViewControllerSegue", sender: self)
+        self.dismiss(animated: true, completion: nil)
         }
     }
 
