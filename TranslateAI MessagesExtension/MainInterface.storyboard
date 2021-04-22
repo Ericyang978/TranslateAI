@@ -10,7 +10,7 @@
         <!--Messages View Controller-->
         <scene sceneID="7MM-of-jgj">
             <objects>
-                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModule="TranslateAI_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainView" id="ObA-dk-sSI" customClass="MessagesViewController" customModule="TranslateAI_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="41" y="73"/>
         </scene>
-        <!--View Controller-->
+        <!--Languages View Controller-->
         <scene sceneID="2ve-FL-O1T">
             <objects>
-                <viewController storyboardIdentifier="selectLanguage" id="Euf-xl-Sr8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="selectLanguage" id="Euf-xl-Sr8" customClass="LanguagesViewController" customModule="TranslateAI_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QCj-Sq-JNd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,6 +81,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="O3h-xP-taP"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="lml-Rc-Nff" id="gR4-RL-3kn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5Q-1Z-mnB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

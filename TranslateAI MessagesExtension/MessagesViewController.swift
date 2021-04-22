@@ -42,10 +42,8 @@ class MessagesViewController: MSMessagesAppViewController {
         //Takes the translated string, and sets the translateText equal to that
         TranslationManager.shared.translate(completion: { (translation) in
             
-            print("hello translation 1")
         
             if let translation = translation {
-                print("hello translation 2")
                 
                 DispatchQueue.main.async { [unowned self] in
                     self.translateText.text = "\(translation)"

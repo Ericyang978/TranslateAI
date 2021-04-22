@@ -57,7 +57,6 @@ class TranslationManager: NSObject {
             if let url = components.url {
 
                 var request = URLRequest(url: url)
-
                 request.httpMethod = api.getHTTPMethod()
 
      
@@ -267,17 +266,8 @@ class TranslationManager: NSObject {
 //translation
 
     var textToTranslate: String?
-
+    //need to set a vaue
     var targetLanguageCode: String?
-
-
-
-
-
-
- 
-
-    
 
     func translate(completion: @escaping (_ translations: String?) -> Void) {
 
@@ -288,17 +278,13 @@ class TranslationManager: NSObject {
         var urlParams = [String: String]()
 
         urlParams["key"] = apiKey
-
         urlParams["q"] = textToTranslate
-
         urlParams["target"] = targetLanguage
-
         urlParams["format"] = "text"
 
      
 
         if let sourceLanguage = sourceLanguageCode {
-
             urlParams["source"] = sourceLanguage
 
         }
@@ -308,7 +294,6 @@ class TranslationManager: NSObject {
         //get json
 
         makeRequest(usingTranslationAPI: .translate, urlParams: urlParams) { (results) in
-
             guard let results = results else { completion(nil); return }
 
      
@@ -316,17 +301,13 @@ class TranslationManager: NSObject {
         //jSON parsing
 
         if let data = results["data"] as? [String: Any], let translations = data["translations"] as? [[String: Any]] {
-
             var allTranslations = [String]()
 
             
 
             for translation in translations {
-
                 if let translatedText = translation["translatedText"] as? String {
-
                     allTranslations.append(translatedText)
-
                 }
 
             }
@@ -334,26 +315,17 @@ class TranslationManager: NSObject {
          
 
             if allTranslations.count > 0 {
-
                 completion(allTranslations[0])
 
             } else {
-
                 completion(nil)
-
             }
 
-         
-
-         
+        
 
         } else {
-
             completion(nil)
-
         }
-
-        
 
         }
 

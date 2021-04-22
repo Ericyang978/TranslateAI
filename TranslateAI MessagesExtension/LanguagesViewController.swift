@@ -12,8 +12,8 @@ class LanguagesViewController: UIViewController {
 
     // MARK: - IBOutlet Properties
     
-    @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
     
@@ -119,7 +119,6 @@ extension LanguagesViewController: UITableViewDelegate {
           tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
              TranslationManager.shared.targetLanguageCode = TranslationManager.shared.supportedLanguages[indexPath.row].code
 //             performSegue(withIdentifier: "TranslationViewControllerSegue", sender: self)
-    
         }
     }
 
