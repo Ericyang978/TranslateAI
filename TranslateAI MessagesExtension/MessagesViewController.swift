@@ -42,23 +42,29 @@ class MessagesViewController: MSMessagesAppViewController {
         //Takes the translated string, and sets the translateText equal to that
         TranslationManager.shared.translate(completion: { (translation) in
             
-        
+            
             if let translation = translation {
                 
                 DispatchQueue.main.async { [unowned self] in
                     self.translateText.text = "\(translation)"
-          
+                    
                     //creates an imessage object and allows user to send
                     let layout = MSMessageTemplateLayout()
                     //maybe dont force unwrap idk
                     layout.caption = "\(self.originalText.text!) \n \(translation)"
-            
+                    
                     let message = MSMessage()
                     message.layout = layout
                     
                     self.activeConversation?.insert(message, completionHandler: nil)
                 }
-                self.dismiss()
+                //instead of dimissing the app (which removes all important data like source), it just changes it to a comapct view if the view is already expanded.
+                if self.presentationStyle == .expanded {
+                    self.requestPresentationStyle(.compact)
+                }
+                
+                
+                
             }
             
             
@@ -85,10 +91,6 @@ class MessagesViewController: MSMessagesAppViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //        originalText.delegate = self
-        
-        //        print("sups ")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

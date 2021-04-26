@@ -44,12 +44,9 @@ class TranslationManager: NSObject {
 
             components.queryItems = [URLQueryItem]()
 
-     
-
+    
             for (key, value) in urlParams {
-
                 components.queryItems?.append(URLQueryItem(name: key, value: value))
-
             }
 
      
@@ -62,15 +59,11 @@ class TranslationManager: NSObject {
      
 
                 let session = URLSession(configuration: .default)
-
                 let task = session.dataTask(with: request) { (results, response, error) in
 
                     if let error = error {
-
                         print(error)
-
                         completion(nil)
-
                     } else {
 
                         if let response = response as? HTTPURLResponse, let results = results {
@@ -266,8 +259,8 @@ class TranslationManager: NSObject {
 //translation
 
     var textToTranslate: String?
-    //need to set a vaue
-    var targetLanguageCode: String?
+    //need to set a vaue, for testing purposes
+    var targetLanguageCode: String? = "es"
 
     func translate(completion: @escaping (_ translations: String?) -> Void) {
 
