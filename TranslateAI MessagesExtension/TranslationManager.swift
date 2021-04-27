@@ -17,26 +17,15 @@
 import Foundation
 
 
-
 class TranslationManager: NSObject {
-
-    
 
     static let shared = TranslationManager()
     var sourceLanguageCode: String?
     private let apiKey = "AIzaSyBVFNN3FFseO1tcmsGUD7FtQc5tQPatH3g"
 
-    
-
-    
-
     override init() {
-
         super.init()
-
     }
-
-    
 
     private func makeRequest(usingTranslationAPI api: TranslationAPI, urlParams: [String: String], completion: @escaping (_ results: [String: Any]?) -> Void) {
 

@@ -34,7 +34,8 @@ class MessagesViewController: MSMessagesAppViewController {
     @IBAction func translateButton(_ sender: Any) {
         
         //detect language (finds the language) (might have an error with delay of return, not sure though)
-        TranslationManager.shared.detectLanguage(forText: self.originalText.text!) { (language) in}
+    
+        TranslationManager.shared.detectLanguage(forText: self.originalText.text ?? "does not exist") { (language) in}
         
         //Sends the text in text box to the translate manager, to be translated
         TranslationManager.shared.textToTranslate = originalText.text
@@ -51,7 +52,7 @@ class MessagesViewController: MSMessagesAppViewController {
                     //creates an imessage object and allows user to send
                     let layout = MSMessageTemplateLayout()
                     //maybe dont force unwrap idk
-                    layout.caption = "\(self.originalText.text!) \n \(translation)"
+                    layout.caption = "\(self.originalText.text ?? "does not exist") \n \(translation)"
                     
                     let message = MSMessage()
                     message.layout = layout
