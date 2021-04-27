@@ -29,7 +29,6 @@ class MessagesViewController: MSMessagesAppViewController {
     //New Code
     
     @IBOutlet weak var originalText: UITextField!
-    @IBOutlet weak var translateText: UITextView!
     
     @IBAction func translateButton(_ sender: Any) {
         
@@ -47,7 +46,6 @@ class MessagesViewController: MSMessagesAppViewController {
             if let translation = translation {
                 
                 DispatchQueue.main.async { [unowned self] in
-                    self.translateText.text = "\(translation)"
                     
                     //creates an imessage object and allows user to send
                     let layout = MSMessageTemplateLayout()
