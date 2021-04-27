@@ -17,7 +17,6 @@ import Foundation
 
 class TranslationManager: NSObject {
 
-    let defaults = UserDefaults.standard
     
     static let shared = TranslationManager()
     var sourceLanguageCode: String?
@@ -234,8 +233,8 @@ class TranslationManager: NSObject {
 
     func translate(completion: @escaping (_ translations: String?) -> Void) {
 
-        guard let textToTranslate = textToTranslate else { completion(nil); return }
-        guard let targetLanguage = defaults.string(forKey: "languageCodeText") else { completion(nil); return }
+            guard let textToTranslate = textToTranslate, let targetLanguage = targetLanguageCode else { completion(nil);
+                return }
 
      
 
