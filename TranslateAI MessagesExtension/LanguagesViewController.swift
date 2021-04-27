@@ -123,7 +123,6 @@ extension LanguagesViewController: UITableViewDelegate {
           let languageCode  = TranslationManager.shared.supportedLanguages[indexPath.row].code
         defaults.set(languageCode, forKey: "languageCodeKey")
         print("the string is " + languageCode!)
-        TranslationManager.shared.targetLanguageCode = defaults.string(forKey: "languageCodeKey")
 
         
         
