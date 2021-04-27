@@ -1,70 +1,83 @@
 {
   "images" : [
     {
+      "filename" : "Artboard 1 copy APP STORE copy 3.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
+      "filename" : "Artboard 1 copy APP STORE copy 2.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
+      "filename" : "Artboard 1 copy APP STORE (1) copy 3.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x45"
     },
     {
+      "filename" : "Artboard 1 copy APP STORE (1) copy 2.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x45"
     },
     {
+      "filename" : "Artboard 1 copy APP STORE copy 3-1.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
+      "filename" : "Artboard 1 copy APP STORE (1) copy 5.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "67x50"
     },
     {
+      "filename" : "Artboard 1 copy APP STORE (1) copy 4.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "74x55"
     },
     {
+      "filename" : "Artboard 1 copy APP STORE.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
     },
     {
+      "filename" : "Artboard 1 copy APP STORE (1) copy 6.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "27x20"
     },
     {
+      "filename" : "Artboard 1 copy APP STORE (1) copy 7.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
       "size" : "27x20"
     },
     {
+      "filename" : "Artboard 1 copy APP STORE (1) copy 8.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "32x24"
     },
     {
+      "filename" : "Artboard 1 copy APP STORE (1) copy 9.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
       "size" : "32x24"
     },
     {
+      "filename" : "Artboard 1 copy APP STORE (1) copy.png",
       "idiom" : "ios-marketing",
       "platform" : "ios",
       "scale" : "1x",
