@@ -1,83 +1,83 @@
 {
   "images" : [
     {
-      "filename" : "Artboard 1 copy APP STORE copy 3.png",
+      "filename" : "58x58.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "Artboard 1 copy APP STORE copy 2.png",
+      "filename" : "87x87.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
-      "filename" : "Artboard 1 copy APP STORE (1) copy 3.png",
+      "filename" : "120x90.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x45"
     },
     {
-      "filename" : "Artboard 1 copy APP STORE (1) copy 2.png",
+      "filename" : "180x135.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x45"
     },
     {
-      "filename" : "Artboard 1 copy APP STORE copy 3-1.png",
+      "filename" : "58x58-1.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "Artboard 1 copy APP STORE (1) copy 5.png",
+      "filename" : "134x100.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "67x50"
     },
     {
-      "filename" : "Artboard 1 copy APP STORE (1) copy 4.png",
+      "filename" : "148x110.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "74x55"
     },
     {
-      "filename" : "Artboard 1 copy APP STORE.png",
+      "filename" : "Artboard 1 copy APP STORE (2).png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
     },
     {
-      "filename" : "Artboard 1 copy APP STORE (1) copy 6.png",
+      "filename" : "54x40.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "27x20"
     },
     {
-      "filename" : "Artboard 1 copy APP STORE (1) copy 7.png",
+      "filename" : "81x60.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
       "size" : "27x20"
     },
     {
-      "filename" : "Artboard 1 copy APP STORE (1) copy 8.png",
+      "filename" : "64x48.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "32x24"
     },
     {
-      "filename" : "Artboard 1 copy APP STORE (1) copy 9.png",
+      "filename" : "96x72.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
       "size" : "32x24"
     },
     {
-      "filename" : "Artboard 1 copy APP STORE (1) copy.png",
+      "filename" : "1024x768.png",
       "idiom" : "ios-marketing",
       "platform" : "ios",
       "scale" : "1x",
