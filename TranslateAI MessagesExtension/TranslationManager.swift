@@ -226,9 +226,6 @@ class TranslationManager: NSObject {
 
     var textToTranslate: String?
     //need to set a vaue, for testing purposes
-    
-   
-    
     var targetLanguageCode: String?
 
     func translate(completion: @escaping (_ translations: String?) -> Void) {
