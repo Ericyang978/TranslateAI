@@ -23,6 +23,8 @@ class LanguagesViewController: UIViewController {
     
     // MARK: - Default Methods
     
+    let defaults = UserDefaults.standard
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -117,7 +119,13 @@ class LanguagesViewController: UIViewController {
 extension LanguagesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
           tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
-             TranslationManager.shared.targetLanguageCode = TranslationManager.shared.supportedLanguages[indexPath.row].code
+        
+          let languageCode  = TranslationManager.shared.supportedLanguages[indexPath.row].code
+        defaults.set(languageCode, forKey: "languageCodeKey")
+        print("the string is " + languageCode!)
+
+        
+        
         self.dismiss(animated: true, completion: nil)
         }
     }

@@ -17,6 +17,7 @@ import Foundation
 
 class TranslationManager: NSObject {
 
+    
     static let shared = TranslationManager()
     var sourceLanguageCode: String?
     private let apiKey = "AIzaSyBVFNN3FFseO1tcmsGUD7FtQc5tQPatH3g"
@@ -173,8 +174,6 @@ class TranslationManager: NSObject {
 
     var supportedLanguages = [TranslationLanguage]()
 
-    
-
    
 
     func fetchSupportedLanguages(completion: @escaping (_ success: Bool) -> Void) {
@@ -186,59 +185,39 @@ class TranslationManager: NSObject {
         urlParams["target"] = Locale.current.languageCode ?? "en"
 
         
-
         makeRequest(usingTranslationAPI: .supportedLanguages, urlParams: urlParams) { (results) in
 
                guard let results = results else { completion(false); return }
-
-            
-
                if let data = results["data"] as? [String: Any], let languages = data["languages"] as? [[String: Any]] {
 
             
 
                    for lang in languages {
-
                        var languageCode: String?
-
                        var languageName: String?
 
             
 
                        if let code = lang["language"] as? String {
-
                            languageCode = code
+                        //keeps the value of languageCode stored
+
 
                        }
 
                        if let name = lang["name"] as? String {
-
                            languageName = name
-
                        }
-
-            
 
                        self.supportedLanguages.append(TranslationLanguage(code: languageCode, name: languageName))
 
                    }
-
-            
-
                    completion(true)
 
-            
-
                } else {
-
                    completion(false)
-
-               }
-
-            
-
+            }
            }
-
     }
 
     
@@ -251,7 +230,8 @@ class TranslationManager: NSObject {
 
     func translate(completion: @escaping (_ translations: String?) -> Void) {
 
-        guard let textToTranslate = textToTranslate, let targetLanguage = targetLanguageCode else { completion(nil); return }
+            guard let textToTranslate = textToTranslate, let targetLanguage = targetLanguageCode else { completion(nil);
+                return }
 
      
 
@@ -263,14 +243,12 @@ class TranslationManager: NSObject {
         urlParams["format"] = "text"
 
      
-
         if let sourceLanguage = sourceLanguageCode {
             urlParams["source"] = sourceLanguage
 
         }
 
-        
-
+    
         //get json
 
         makeRequest(usingTranslationAPI: .translate, urlParams: urlParams) { (results) in

@@ -27,7 +27,8 @@ import Messages
 class MessagesViewController: MSMessagesAppViewController {
     
     //New Code
-    
+    let defaults = UserDefaults.standard
+
     @IBOutlet weak var originalText: UITextField!
     
     @IBAction func translateButton(_ sender: Any) {
@@ -36,6 +37,8 @@ class MessagesViewController: MSMessagesAppViewController {
     
         TranslationManager.shared.detectLanguage(forText: self.originalText.text ?? "does not exist") { (language) in}
         
+        //provides old select language (defaults save a code for the text which can be retrieved after the app is closed.) 
+        TranslationManager.shared.targetLanguageCode = defaults.string(forKey: "languageCodeKey")
         //Sends the text in text box to the translate manager, to be translated
         TranslationManager.shared.textToTranslate = originalText.text
         
