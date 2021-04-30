@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B592A2B263C4DC800A4ADB2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B592A2A263C4DC800A4ADB2 /* UIView.swift */; };
 		6BAF890E263059B200D73A8B /* TranslationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAF890D263059B200D73A8B /* TranslationManager.swift */; };
 		A03DB7392600E05D00A198AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A03DB7382600E05D00A198AA /* Assets.xcassets */; };
 		A03DB7402600E05D00A198AA /* TranslateAI MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A03DB73F2600E05D00A198AA /* TranslateAI MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -47,6 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6B592A2A263C4DC800A4ADB2 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = ../../../../../Downloads/UIView.swift; sourceTree = "<group>"; };
 		6B8405F0261F41FC00869C1B /* GTAlertCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTAlertCollection.swift; sourceTree = "<group>"; };
 		6BAF890D263059B200D73A8B /* TranslationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationManager.swift; sourceTree = "<group>"; };
 		A03DB7352600E05B00A198AA /* TranslateAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TranslateAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				A03DB7472600E05D00A198AA /* MessagesViewController.swift */,
+				6B592A2A263C4DC800A4ADB2 /* UIView.swift */,
 				A0C2BE27262EF8FD00DAA829 /* TranslationAPI.swift */,
 				6BAF890D263059B200D73A8B /* TranslationManager.swift */,
 				A0FE287626307D23001B3EBF /* LanguagesViewController.swift */,
@@ -252,6 +255,7 @@
 				A0C2BE28262EF8FD00DAA829 /* TranslationAPI.swift in Sources */,
 				6BAF890E263059B200D73A8B /* TranslationManager.swift in Sources */,
 				A0FE287726307D23001B3EBF /* LanguagesViewController.swift in Sources */,
+				6B592A2B263C4DC800A4ADB2 /* UIView.swift in Sources */,
 				A044F6A7262EF2E000E7408C /* GTAlertCollection.swift in Sources */,
 				A0FE287226307D13001B3EBF /* LanguageCell.swift in Sources */,
 				A03DB7482600E05D00A198AA /* MessagesViewController.swift in Sources */,
