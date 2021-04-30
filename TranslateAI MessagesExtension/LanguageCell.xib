@@ -18,15 +18,15 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7c-M5-eai">
                         <rect key="frame" x="15" y="11" width="345" height="21"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                         <color key="textColor" name="fec554"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LX1-Jh-exU">
                         <rect key="frame" x="15" y="40" width="345" height="21"/>
                         <color key="backgroundColor" name="4187c7"/>
-                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                        <color key="textColor" name="fec554"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="highlightedColor" name="fec554"/>
                     </label>
                 </subviews>
@@ -42,6 +42,8 @@
                     <constraint firstAttribute="bottomMargin" secondItem="LX1-Jh-exU" secondAttribute="bottom" constant="8" id="vEw-Yv-iHi"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" name="4187c7"/>
+            <color key="tintColor" name="4187c7"/>
             <connections>
                 <outlet property="codeLabel" destination="LX1-Jh-exU" id="W72-Ow-aKu"/>
                 <outlet property="languageLabel" destination="p7c-M5-eai" id="ukZ-op-SUP"/>
