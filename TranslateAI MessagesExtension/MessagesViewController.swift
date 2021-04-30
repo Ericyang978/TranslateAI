@@ -23,19 +23,23 @@
 //Send OG message in new text color
 import UIKit
 import Messages
+import InstantSearchVoiceOverlay
 
 class MessagesViewController: MSMessagesAppViewController {
     
     //New Code
+    
+    
+    
     let defaults = UserDefaults.standard
-
-//    @IBOutlet weak var originalText: UITextField!
+    
+    @IBOutlet weak var originalText: UITextField!
     
     @IBOutlet weak var originalText: UITextView!
     @IBAction func translateButton(_ sender: Any) {
         
         //detect language (finds the language) (might have an error with delay of return, not sure though)
-    
+        
         TranslationManager.shared.detectLanguage(forText: self.originalText.text ?? "does not exist") { (language) in}
         
         //provides old select language (defaults save a code for the text which can be retrieved after the app is closed.) 
@@ -74,6 +78,44 @@ class MessagesViewController: MSMessagesAppViewController {
         })
         
     }
+    
+    
+    let voiceOverlay = VoiceOverlayController()
+    
+        
+    @IBAction func Button(_ sender: Any) {
+           voiceOverlay.start(on: self, textHandler: {text, final, _ in
+        
+                    if final{
+                        print("Final text: \(text)")
+                            self.originalText.text=text
+                    }
+                    else{
+                        //                print("in progress: \(text)")
+                    }
+        
+                }, errorHandler: {error in
+        
+                })
+    }
+    //
+//    @IBAction func speechToTextButton(_ sender: Any) {
+//   voiceOverlay.start(on: self, textHandler: {text, final, _ in
+//            
+//            if final{
+//                print("Final text: \(text)")
+//                    self.originalText.text=text
+//            }
+//            else{
+//                //                print("in progress: \(text)")
+//            }
+//            
+//        }, errorHandler: {error in
+//            
+//        })
+//    }
+    
+
     
     //IT WORKS!!! (basically opens up another view to work with, for select language)
     //    @IBAction func selectLanguageButton(_ sender: Any) {

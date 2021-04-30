@@ -40,6 +40,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="speechToTextButton:" destination="ObA-dk-sSI" eventType="editingDidEnd" id="QCY-Iv-ViN"/>
+                                </connections>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="globe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="t8a-sS-RRU">
                                 <rect key="frame" x="146" y="130.5" width="21" height="20"/>
@@ -81,10 +84,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" name="75B2E1"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znt-rO-jgS">
-                                <rect key="frame" x="313" y="71" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uM9-Iv-rCo">
+                                <rect key="frame" x="315" y="69" width="26" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title=" "/>
+                                <color key="tintColor" name="fec554"/>
+                                <connections>
+                                    <action selector="Button:" destination="ObA-dk-sSI" eventType="touchUpInside" id="ddw-NZ-J6x"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="4187c7"/>
