@@ -35,7 +35,7 @@ class MessagesViewController: MSMessagesAppViewController {
     
     @IBOutlet weak var originalText: UITextField!
     
-    @IBOutlet weak var originalText: UITextView!
+//    @IBOutlet weak var originalText: UITextView!
     @IBAction func translateButton(_ sender: Any) {
         
         //detect language (finds the language) (might have an error with delay of return, not sure though)
@@ -82,8 +82,8 @@ class MessagesViewController: MSMessagesAppViewController {
     
     let voiceOverlay = VoiceOverlayController()
     
-        
-    @IBAction func Button(_ sender: Any) {
+    @IBAction func spokenTextButton(_ sender: Any) {
+    
            voiceOverlay.start(on: self, textHandler: {text, final, _ in
         
                     if final{
@@ -97,7 +97,7 @@ class MessagesViewController: MSMessagesAppViewController {
                 }, errorHandler: {error in
         
                 })
-    }
+}
     //
 //    @IBAction func speechToTextButton(_ sender: Any) {
 //   voiceOverlay.start(on: self, textHandler: {text, final, _ in
