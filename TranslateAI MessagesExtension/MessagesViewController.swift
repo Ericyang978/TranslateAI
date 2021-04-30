@@ -29,8 +29,9 @@ class MessagesViewController: MSMessagesAppViewController {
     //New Code
     let defaults = UserDefaults.standard
 
-    @IBOutlet weak var originalText: UITextField!
+//    @IBOutlet weak var originalText: UITextField!
     
+    @IBOutlet weak var originalText: UITextView!
     @IBAction func translateButton(_ sender: Any) {
         
         //detect language (finds the language) (might have an error with delay of return, not sure though)
