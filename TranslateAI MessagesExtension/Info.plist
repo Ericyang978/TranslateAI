@@ -27,5 +27,9 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.message-payload-provider</string>
 	</dict>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>pls 2</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Pls again 2</string>
 </dict>
 </plist>

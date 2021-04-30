@@ -57,11 +57,11 @@ public class NoPermissionViewController: UIViewController {
             return
         }
         
-        if UIApplication.shared.canOpenURL(settingsUrl) {
-            UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                
-            })
-        }
+//        if UIApplication.shared.canOpenURL(settingsUrl) {
+//            UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+//
+//            })
+//        }
     }
     
     @objc func doneWithSettingsTapped() {
