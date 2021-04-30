@@ -48,6 +48,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		49BECED5263C4FF7006EEAB0 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = ../../../Downloads/UIView.swift; sourceTree = "<group>"; };
+		49BECED7263C6AFD006EEAB0 /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainInterface.storyboard; path = ../../../Downloads/MainInterface.storyboard; sourceTree = "<group>"; };
 		6B8405F0261F41FC00869C1B /* GTAlertCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTAlertCollection.swift; sourceTree = "<group>"; };
 		6BAF890D263059B200D73A8B /* TranslationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationManager.swift; sourceTree = "<group>"; };
 		A03DB7352600E05B00A198AA /* TranslateAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TranslateAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,13 +138,14 @@
 			children = (
 				A03DB7472600E05D00A198AA /* MessagesViewController.swift */,
 				A05D7C5F263C671F003C9D68 /* UIView.swift */,
+				49BECED5263C4FF7006EEAB0 /* UIView.swift */,
 				A0C2BE27262EF8FD00DAA829 /* TranslationAPI.swift */,
 				6BAF890D263059B200D73A8B /* TranslationManager.swift */,
 				A0FE287626307D23001B3EBF /* LanguagesViewController.swift */,
 				A0FE287126307D13001B3EBF /* LanguageCell.swift */,
 				A0FE287326307D19001B3EBF /* LanguageCell.xib */,
 				6B8405F0261F41FC00869C1B /* GTAlertCollection.swift */,
-				A044F6A8262EF2F600E7408C /* MainInterface.storyboard */,
+				49BECED7263C6AFD006EEAB0 /* MainInterface.storyboard */,
 				A03DB74C2600E05E00A198AA /* Assets.xcassets */,
 				A03DB74E2600E05E00A198AA /* Info.plist */,
 				A0FE287026307D13001B3EBF /* TranslateAI-Bridging-Header.h */,
@@ -231,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A03DB7392600E05D00A198AA /* Assets.xcassets in Resources */,
+				49BECED8263C6AFD006EEAB0 /* MainInterface.storyboard in Resources */,
 				A0FE287426307D19001B3EBF /* LanguageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,7 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0FE287526307D19001B3EBF /* LanguageCell.xib in Resources */,
-				A044F6A9262EF2F600E7408C /* MainInterface.storyboard in Resources */,
+				49BECED9263C6AFD006EEAB0 /* MainInterface.storyboard in Resources */,
 				A03DB74D2600E05E00A198AA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
