@@ -55,15 +55,19 @@ class MessagesViewController: MSMessagesAppViewController {
                 
                 DispatchQueue.main.async { [unowned self] in
                     
-                    //creates an imessage object and allows user to send
-                    let layout = MSMessageTemplateLayout()
-                    //maybe dont force unwrap idk
-                    layout.caption = "\(self.originalText.text ?? "does not exist") \n \(translation)"
+                    //creates an imessage object and allows user to send (dont need)
                     
-                    let message = MSMessage()
-                    message.layout = layout
-                    
-                    self.activeConversation?.insert(message, completionHandler: nil)
+//                    let layout = MSMessageTemplateLayout()
+//                    //maybe dont force unwrap idk
+//                    layout.caption = "\(self.originalText.text ?? "does not exist") \n \(translation)"
+//
+//                    let message = MSMessage()
+//                    message.layout = layout
+//
+//                    self.activeConversation?.insert(message, completionHandler: nil)
+                
+                    self.activeConversation?.insertText("\(self.originalText.text ?? "does not exist") \n \n\(translation)", completionHandler: nil)
+
                 }
                 //instead of dimissing the app (which removes all important data like source), it just changes it to a comapct view if the view is already expanded.
                 if self.presentationStyle == .expanded {
@@ -79,7 +83,7 @@ class MessagesViewController: MSMessagesAppViewController {
         
     }
     
-    
+    //allows for voice recongition
     let voiceOverlay = VoiceOverlayController()
     
     @IBAction func spokenTextButton(_ sender: Any) {

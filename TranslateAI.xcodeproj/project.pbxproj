@@ -14,10 +14,11 @@
 		A03DB7402600E05D00A198AA /* TranslateAI MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A03DB73F2600E05D00A198AA /* TranslateAI MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A03DB7452600E05D00A198AA /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03DB7442600E05D00A198AA /* Messages.framework */; };
 		A03DB7482600E05D00A198AA /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03DB7472600E05D00A198AA /* MessagesViewController.swift */; };
-		A03DB74D2600E05E00A198AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A03DB74C2600E05E00A198AA /* Assets.xcassets */; };
 		A03FB07C263C79720006914D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FB07B263C79720006914D /* UIView.swift */; };
 		A03FB07E263C7AA10006914D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03FB07D263C7AA10006914D /* MainInterface.storyboard */; };
 		A03FB07F263C7AA10006914D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03FB07D263C7AA10006914D /* MainInterface.storyboard */; };
+		A03FB081263C7BEC0006914D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A03FB080263C7BEC0006914D /* Assets.xcassets */; };
+		A03FB082263C7BEC0006914D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A03FB080263C7BEC0006914D /* Assets.xcassets */; };
 		A044F6A7262EF2E000E7408C /* GTAlertCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8405F0261F41FC00869C1B /* GTAlertCollection.swift */; };
 		A0C2BE28262EF8FD00DAA829 /* TranslationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C2BE27262EF8FD00DAA829 /* TranslationAPI.swift */; };
 		A0FE287226307D13001B3EBF /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FE287126307D13001B3EBF /* LanguageCell.swift */; };
@@ -63,10 +64,10 @@
 		A03DB73F2600E05D00A198AA /* TranslateAI MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TranslateAI MessagesExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A03DB7442600E05D00A198AA /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		A03DB7472600E05D00A198AA /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
-		A03DB74C2600E05E00A198AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A03DB74E2600E05E00A198AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A03FB07B263C79720006914D /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = ../../../UIView.swift; sourceTree = "<group>"; };
 		A03FB07D263C7AA10006914D /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainInterface.storyboard; path = ../../../MainInterface.storyboard; sourceTree = "<group>"; };
+		A03FB080263C7BEC0006914D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0C2BE27262EF8FD00DAA829 /* TranslationAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationAPI.swift; sourceTree = "<group>"; };
 		A0FE287026307D13001B3EBF /* TranslateAI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TranslateAI-Bridging-Header.h"; sourceTree = "<group>"; };
 		A0FE287126307D13001B3EBF /* LanguageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
@@ -175,8 +176,8 @@
 				A03FB07D263C7AA10006914D /* MainInterface.storyboard */,
 				A0FE287126307D13001B3EBF /* LanguageCell.swift */,
 				A0FE287326307D19001B3EBF /* LanguageCell.xib */,
+				A03FB080263C7BEC0006914D /* Assets.xcassets */,
 				6B8405F0261F41FC00869C1B /* GTAlertCollection.swift */,
-				A03DB74C2600E05E00A198AA /* Assets.xcassets */,
 				A03DB74E2600E05E00A198AA /* Info.plist */,
 				A0FE287026307D13001B3EBF /* TranslateAI-Bridging-Header.h */,
 			);
@@ -276,6 +277,7 @@
 			files = (
 				A03DB7392600E05D00A198AA /* Assets.xcassets in Resources */,
 				A03FB07E263C7AA10006914D /* MainInterface.storyboard in Resources */,
+				A03FB081263C7BEC0006914D /* Assets.xcassets in Resources */,
 				A0FE287426307D19001B3EBF /* LanguageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,8 +287,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0FE287526307D19001B3EBF /* LanguageCell.xib in Resources */,
+				A03FB082263C7BEC0006914D /* Assets.xcassets in Resources */,
 				A03FB07F263C7AA10006914D /* MainInterface.storyboard in Resources */,
-				A03DB74D2600E05E00A198AA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
