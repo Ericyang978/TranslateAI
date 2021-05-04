@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dN6-Hf-YUt">
-                                <rect key="frame" x="66" y="122" width="113" height="35"/>
+                                <rect key="frame" x="66" y="194" width="113" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="fec554"/>
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
@@ -35,26 +35,17 @@
                                     <action selector="translateButton:" destination="ObA-dk-sSI" eventType="touchUpInside" id="EB5-fd-Bdx"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" background="mic.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yJU-0i-fYc">
-                                <rect key="frame" x="69" y="69" width="277" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="speechToTextButton:" destination="ObA-dk-sSI" eventType="editingDidEnd" id="QCY-Iv-ViN"/>
-                                </connections>
-                            </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="globe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="t8a-sS-RRU">
-                                <rect key="frame" x="146" y="130.5" width="21" height="20"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="paperplane.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="t8a-sS-RRU">
+                                <rect key="frame" x="146" y="202.5" width="21" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" name="4187c7"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Triangle pattern 1 rotated" translatesAutoresizingMaskIntoConstraints="NO" id="t1H-rr-ets">
-                                <rect key="frame" x="-21" y="335" width="293" height="507"/>
+                                <rect key="frame" x="-21" y="350" width="293" height="507"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWv-uY-fPQ">
-                                <rect key="frame" x="194" y="122" width="153" height="35"/>
+                                <rect key="frame" x="194" y="194" width="153" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Select Language     ">
                                     <color key="titleColor" name="fec554"/>
@@ -71,35 +62,74 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="SelectLanguageButton:" destination="ObA-dk-sSI" eventType="touchUpInside" id="Vvp-bP-vn0"/>
+                                    <action selector="selectLanguageButton:" destination="ObA-dk-sSI" eventType="touchUpInside" id="MjN-3c-YiR"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gRu-wk-oie">
-                                <rect key="frame" x="321" y="131" width="20" height="20"/>
+                                <rect key="frame" x="319" y="202" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" name="fec554"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="mic.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fhT-PW-uhj">
-                                <rect key="frame" x="310" y="70.5" width="37" height="31"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6fl-ZT-jQv">
+                                <rect key="frame" x="66" y="117" width="281" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" name="75B2E1"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uM9-Iv-rCo">
-                                <rect key="frame" x="315" y="69" width="26" height="31"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="5" height="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="fec554"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DlF-1a-qwU">
+                                <rect key="frame" x="317" y="135" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" name="fec554"/>
+                                <state key="normal" title="Button" image="music.mic" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
                                 <connections>
-                                    <action selector="Button:" destination="ObA-dk-sSI" eventType="touchUpInside" id="ddw-NZ-J6x"/>
+                                    <action selector="spokenTextButton:" destination="ObA-dk-sSI" eventType="touchUpInside" id="ugy-8D-LoI"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="4187c7"/>
                         <color key="tintColor" name="4187c7"/>
                         <viewLayoutGuide key="safeArea" id="LDy-ih-0nr"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="50"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                <size key="value" width="5" height="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="originalText" destination="yJU-0i-fYc" id="W0p-q7-YXv"/>
+                        <outlet property="originalText" destination="6fl-ZT-jQv" id="TEp-jH-Rlm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -109,22 +139,17 @@
         <!--Languages View Controller-->
         <scene sceneID="2ve-FL-O1T">
             <objects>
-                <viewController storyboardIdentifier="selectLanguage" id="Euf-xl-Sr8" customClass="LanguagesViewController" customModule="TranslateAI_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LanguageSelector" id="Euf-xl-Sr8" customClass="LanguagesViewController" customModule="TranslateAI_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QCj-Sq-JNd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lml-Rc-Nff">
-                                <rect key="frame" x="0.0" y="71" width="414" height="825"/>
+                                <rect key="frame" x="0.0" y="120" width="414" height="776"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="4187c7"/>
                                 <color key="separatorColor" name="4187c7"/>
                                 <color key="sectionIndexBackgroundColor" name="4187c7"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" name="4187c7"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Triangle pattern 4" translatesAutoresizingMaskIntoConstraints="NO" id="gG8-L2-FNt">
                                 <rect key="frame" x="328" y="5" width="86" height="76"/>
@@ -141,12 +166,36 @@
                                 <color key="textColor" name="4187c7"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lf3-IW-mKx">
+                                <rect key="frame" x="0.0" y="71" width="414" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="je8-yj-XE3">
+                                        <rect key="frame" x="53" y="8" width="344" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Bie-Id-dYd">
+                                        <rect key="frame" x="14" y="9" width="31" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" name="fec554"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="4187c7"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="4187c7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" name="4187c7"/>
                         <viewLayoutGuide key="safeArea" id="O3h-xP-taP"/>
                     </view>
                     <connections>
+                        <outlet property="parse_language" destination="je8-yj-XE3" id="qUU-Tg-Eiw"/>
                         <outlet property="tableView" destination="lml-Rc-Nff" id="gR4-RL-3kn"/>
                     </connections>
                 </viewController>
@@ -160,14 +209,11 @@
         <image name="Triangle pattern 1 rotated" width="720" height="960"/>
         <image name="Triangle pattern 3" width="960" height="720"/>
         <image name="Triangle pattern 4" width="480" height="360"/>
-        <image name="globe" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="mic.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="music.mic" catalog="system" width="128" height="118"/>
+        <image name="paperplane.fill" catalog="system" width="128" height="121"/>
         <namedColor name="4187c7">
             <color red="0.25490196078431371" green="0.52941176470588236" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="75B2E1">
-            <color red="0.45882352941176469" green="0.69803921568627447" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="fec554">
             <color red="0.99607843137254903" green="0.77254901960784317" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

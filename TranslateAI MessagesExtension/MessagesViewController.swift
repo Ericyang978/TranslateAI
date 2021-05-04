@@ -27,6 +27,7 @@ import UIKit
 import Messages
 import InstantSearchVoiceOverlay
 
+
 class MessagesViewController: MSMessagesAppViewController {
     
     //New Code
@@ -98,7 +99,7 @@ class MessagesViewController: MSMessagesAppViewController {
            voiceOverlay.start(on: self, textHandler: {text, final, _ in
         
                     if final{
-                        print("Final text: \(text)")
+                        print("The Final Text: \(text)")
                             self.originalText.text=text
                     }
                     else{
