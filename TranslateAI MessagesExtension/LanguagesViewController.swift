@@ -94,15 +94,15 @@ class LanguagesViewController: UIViewController {
      // If it's zero, no languages have been fetched, so ask user
      // if they want to fetch them now.
      if TranslationManager.shared.supportedLanguages.count == 0 {
-         alertCollection.presentAlert(withTitle: "Supported Languages", message: "It seems that supported languages for translation have not been fetched yet. Would you like to get them now?", buttonTitles: ["Yes, fetch supported languages", "Not now"], cancelButtonIndex: 1, destructiveButtonIndices: nil) { (actionIndex) in
-  
+//         alertCollection.presentAlert(withTitle: "Supported Languages", message: "It seems that supported languages for translation have not been fetched yet. Would you like to get them now?", buttonTitles: ["Yes, fetch supported languages", "Not now"], cancelButtonIndex: 1, destructiveButtonIndices: nil) { (actionIndex) in
+//
              // Check if user wants to fetch supported languages.
-             if actionIndex == 0 {
+//             if actionIndex == 0 {
                  self.fetchSupportedLanguages()
-             }
+//             }
          }
      }
- }
+// }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
