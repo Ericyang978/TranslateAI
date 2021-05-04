@@ -21,6 +21,8 @@
 //Cool things we might want
 //For Select language, perhaps use detet language on previous messages (sent by the user) to tell the message we need to translate into
 //Send OG message in new text color
+
+//5.1: shortcut feature (like if you type 'u' instead of you)
 import UIKit
 import Messages
 import InstantSearchVoiceOverlay
@@ -33,9 +35,10 @@ class MessagesViewController: MSMessagesAppViewController {
     
     let defaults = UserDefaults.standard
     
-    @IBOutlet weak var originalText: UITextField!
+//    @IBOutlet weak var originalText: UITextField!
     
-//    @IBOutlet weak var originalText: UITextView!
+    @IBOutlet weak var originalText: UITextView!
+    //    @IBOutlet weak var originalText: UITextView!
     @IBAction func translateButton(_ sender: Any) {
         
         //detect language (finds the language) (might have an error with delay of return, not sure though)
@@ -66,8 +69,11 @@ class MessagesViewController: MSMessagesAppViewController {
 //
 //                    self.activeConversation?.insert(message, completionHandler: nil)
                 
+                    //adds text to text bar so user can send
                     self.activeConversation?.insertText("\(self.originalText.text ?? "does not exist") \n \n\(translation)", completionHandler: nil)
-
+                    
+                    //sets original text to non existant so user can type something else
+                    self.originalText.text = ""
                 }
                 //instead of dimissing the app (which removes all important data like source), it just changes it to a comapct view if the view is already expanded.
                 if self.presentationStyle == .expanded {
@@ -88,6 +94,7 @@ class MessagesViewController: MSMessagesAppViewController {
     
     @IBAction func spokenTextButton(_ sender: Any) {
     
+
            voiceOverlay.start(on: self, textHandler: {text, final, _ in
         
                     if final{
