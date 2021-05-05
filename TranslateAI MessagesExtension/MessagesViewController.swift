@@ -38,7 +38,9 @@ class MessagesViewController: MSMessagesAppViewController {
     
 //    @IBOutlet weak var originalText: UITextField!
     
+    @IBOutlet weak var notExist: UITextView!
     @IBOutlet weak var originalText: UITextView!
+    
     //    @IBOutlet weak var originalText: UITextView!
     @IBAction func translateButton(_ sender: Any) {
         
@@ -91,16 +93,24 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     //allows for voice recongition
+
     let voiceOverlay = VoiceOverlayController()
     
     @IBAction func spokenTextButton(_ sender: Any) {
-    
-
+        
+        
+        //makes you need to click the mic in the center of the view first to work. If false, automatically starts
+        voiceOverlay.settings.autoStart = false
+        //Allows the code to end on its own
+        voiceOverlay.settings.autoStop = true
+        //after 2 seconds if waiting, the Speech to text (STT) will close
+        voiceOverlay.settings.autoStopTimeout = 2
            voiceOverlay.start(on: self, textHandler: {text, final, _ in
         
                     if final{
                         print("The Final Text: \(text)")
                             self.originalText.text=text
+                
                     }
                     else{
                         //                print("in progress: \(text)")

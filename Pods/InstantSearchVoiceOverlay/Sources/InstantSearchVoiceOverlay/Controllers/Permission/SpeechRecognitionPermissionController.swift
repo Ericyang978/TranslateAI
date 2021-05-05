@@ -18,7 +18,7 @@ struct SpeechRecognitionPermissionController: PermissionController {
   public var status: PermissionStatus {
     return mapStatus(SFSpeechRecognizer.authorizationStatus())
   }
-  
+   
   public func requestPermission(completion: @escaping (PermissionStatus) -> Void) {
     SFSpeechRecognizer.requestAuthorization { status in
         completion(self.mapStatus(status))
