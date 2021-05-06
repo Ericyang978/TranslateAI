@@ -17,10 +17,9 @@
 		A03FB081263C7BEC0006914D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A03FB080263C7BEC0006914D /* Assets.xcassets */; };
 		A03FB082263C7BEC0006914D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A03FB080263C7BEC0006914D /* Assets.xcassets */; };
 		A044F6A7262EF2E000E7408C /* GTAlertCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8405F0261F41FC00869C1B /* GTAlertCollection.swift */; };
-		A09822F12641D0FA00758C45 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A09822F02641D0FA00758C45 /* MainInterface.storyboard */; };
-		A09822F22641D0FA00758C45 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A09822F02641D0FA00758C45 /* MainInterface.storyboard */; };
-		A09822F42641D0FE00758C45 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09822F32641D0FE00758C45 /* UIView.swift */; };
 		A0C2BE28262EF8FD00DAA829 /* TranslationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C2BE27262EF8FD00DAA829 /* TranslationAPI.swift */; };
+		A0E8529926442767001C41DF /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E8529826442767001C41DF /* MainInterface.storyboard */; };
+		A0E8529B2644276B001C41DF /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E8529A2644276B001C41DF /* UIView.swift */; };
 		A0FE287226307D13001B3EBF /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FE287126307D13001B3EBF /* LanguageCell.swift */; };
 		A0FE287426307D19001B3EBF /* LanguageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0FE287326307D19001B3EBF /* LanguageCell.xib */; };
 		A0FE287526307D19001B3EBF /* LanguageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0FE287326307D19001B3EBF /* LanguageCell.xib */; };
@@ -66,9 +65,9 @@
 		A03DB7472600E05D00A198AA /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		A03DB74E2600E05E00A198AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A03FB080263C7BEC0006914D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A09822F02641D0FA00758C45 /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainInterface.storyboard; path = ../../../MainInterface.storyboard; sourceTree = "<group>"; };
-		A09822F32641D0FE00758C45 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = ../../../UIView.swift; sourceTree = "<group>"; };
 		A0C2BE27262EF8FD00DAA829 /* TranslationAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationAPI.swift; sourceTree = "<group>"; };
+		A0E8529826442767001C41DF /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainInterface.storyboard; path = ../../MainInterface.storyboard; sourceTree = "<group>"; };
+		A0E8529A2644276B001C41DF /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = ../../UIView.swift; sourceTree = "<group>"; };
 		A0FE287026307D13001B3EBF /* TranslateAI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TranslateAI-Bridging-Header.h"; sourceTree = "<group>"; };
 		A0FE287126307D13001B3EBF /* LanguageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
 		A0FE287326307D19001B3EBF /* LanguageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LanguageCell.xib; sourceTree = "<group>"; };
@@ -170,9 +169,9 @@
 			children = (
 				A03DB7472600E05D00A198AA /* MessagesViewController.swift */,
 				A0C2BE27262EF8FD00DAA829 /* TranslationAPI.swift */,
-				A09822F32641D0FE00758C45 /* UIView.swift */,
+				A0E8529A2644276B001C41DF /* UIView.swift */,
 				6BAF890D263059B200D73A8B /* TranslationManager.swift */,
-				A09822F02641D0FA00758C45 /* MainInterface.storyboard */,
+				A0E8529826442767001C41DF /* MainInterface.storyboard */,
 				A0FE287626307D23001B3EBF /* LanguagesViewController.swift */,
 				A0FE287126307D13001B3EBF /* LanguageCell.swift */,
 				A0FE287326307D19001B3EBF /* LanguageCell.xib */,
@@ -276,7 +275,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A03DB7392600E05D00A198AA /* Assets.xcassets in Resources */,
-				A09822F12641D0FA00758C45 /* MainInterface.storyboard in Resources */,
 				A03FB081263C7BEC0006914D /* Assets.xcassets in Resources */,
 				A0FE287426307D19001B3EBF /* LanguageCell.xib in Resources */,
 			);
@@ -287,7 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0FE287526307D19001B3EBF /* LanguageCell.xib in Resources */,
-				A09822F22641D0FA00758C45 /* MainInterface.storyboard in Resources */,
+				A0E8529926442767001C41DF /* MainInterface.storyboard in Resources */,
 				A03FB082263C7BEC0006914D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,10 +361,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E8529B2644276B001C41DF /* UIView.swift in Sources */,
 				A0C2BE28262EF8FD00DAA829 /* TranslationAPI.swift in Sources */,
 				6BAF890E263059B200D73A8B /* TranslationManager.swift in Sources */,
 				A0FE287726307D23001B3EBF /* LanguagesViewController.swift in Sources */,
-				A09822F42641D0FE00758C45 /* UIView.swift in Sources */,
 				A044F6A7262EF2E000E7408C /* GTAlertCollection.swift in Sources */,
 				A0FE287226307D13001B3EBF /* LanguageCell.swift in Sources */,
 				A03DB7482600E05D00A198AA /* MessagesViewController.swift in Sources */,
