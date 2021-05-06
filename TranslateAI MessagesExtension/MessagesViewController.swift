@@ -38,7 +38,6 @@ class MessagesViewController: MSMessagesAppViewController {
     
 //    @IBOutlet weak var originalText: UITextField!
     
-    @IBOutlet weak var notExist: UITextView!
     @IBOutlet weak var originalText: UITextView!
     
     //    @IBOutlet weak var originalText: UITextView!
@@ -97,7 +96,7 @@ class MessagesViewController: MSMessagesAppViewController {
     let voiceOverlay = VoiceOverlayController()
     
     @IBAction func spokenTextButton(_ sender: Any) {
-        
+            
         
         //makes you need to click the mic in the center of the view first to work. If false, automatically starts
         voiceOverlay.settings.autoStart = false
