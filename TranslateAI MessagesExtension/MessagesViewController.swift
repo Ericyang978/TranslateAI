@@ -32,17 +32,22 @@ class MessagesViewController: MSMessagesAppViewController {
     
     //New Code
     
+    //shared stuff info?
+    static let shared = MessagesViewController()
     
     
+    //some new code regarding settings
+    var sendOriginalText: Bool?
     let defaults = UserDefaults.standard
     
-//    @IBOutlet weak var originalText: UITextField!
+    //    @IBOutlet weak var originalText: UITextField!
     
+    @IBOutlet weak var notExist: UITextView!
     @IBOutlet weak var originalText: UITextView!
     
     //    @IBOutlet weak var originalText: UITextView!
     @IBAction func translateButton(_ sender: Any) {
-        
+       
         //detect language (finds the language) (might have an error with delay of return, not sure though)
         
         TranslationManager.shared.detectLanguage(forText: self.originalText.text ?? "does not exist") { (language) in}
@@ -55,6 +60,18 @@ class MessagesViewController: MSMessagesAppViewController {
         //Takes the translated string, and sets the translateText equal to that
         TranslationManager.shared.translate(completion: { (translation) in
             
+            //Mofidiers of output
+            
+            //modifier for sending originalText1 in message
+            //            guard let sendOriginalText1 =  self.sendOriginalText else{
+            //                print("does not work")
+            //                return
+            //            }
+            //
+            //            if sendOriginalText1{
+            //                       print("hello, i am here")
+            //            }
+            
             
             if let translation = translation {
                 
@@ -62,17 +79,46 @@ class MessagesViewController: MSMessagesAppViewController {
                     
                     //creates an imessage object and allows user to send (dont need)
                     
-//                    let layout = MSMessageTemplateLayout()
-//                    //maybe dont force unwrap idk
-//                    layout.caption = "\(self.originalText.text ?? "does not exist") \n \(translation)"
-//
-//                    let message = MSMessage()
-//                    message.layout = layout
-//
-//                    self.activeConversation?.insert(message, completionHandler: nil)
-                
-                    //adds text to text bar so user can send
-                    self.activeConversation?.insertText("\(self.originalText.text ?? "does not exist") \n \n\(translation)", completionHandler: nil)
+                    //                    let layout = MSMessageTemplateLayout()
+                    //                    //maybe dont force unwrap idk
+                    //                    layout.caption = "\(self.originalText.text ?? "does not exist") \n \(translation)"
+                    //
+                    //                    let message = MSMessage()
+                    //                    message.layout = layout
+                    
+                    //                    self.activeConversation?.insert(message, completionHandler: nil)
+                    
+                    
+                    
+                    
+                    //This section adds text to the text bar where the user can send the message
+                    //depends upon the states of the two switches in settings view, and we use a switch statement (coincidence that the two share a name) in order to tell what to put in the send bar. 
+    
+                    let switchStatementVariable = (self.defaults.string(forKey: "originalTextDeciderState"), self.defaults.string(forKey: "translatedTextDeciderState") )
+                    switch switchStatementVariable{
+                        
+                    case (nil, nil), (nil, "on"), ("on", nil), ("on", "on") : self.activeConversation?.insertText("\(self.originalText.text ?? "does not exist") \n \n\(translation)", completionHandler: nil)
+                    case (nil, "off"), ("on", "off"): self.activeConversation?.insertText("\(self.originalText.text ?? "does not exist")", completionHandler: nil)
+                    case ("off", nil),("off", "on"): self.activeConversation?.insertText("\(translation)", completionHandler: nil)
+                    case ("off", "off"): self.activeConversation?.insertText("", completionHandler: nil)
+
+                    default:
+                        self.activeConversation?.insertText("default case was used lol")
+                    }
+                    
+                    
+                    
+                    //Switch statement trial 1
+                    //                    switch self.defaults.string(forKey: "originalTextDeciderState"){
+                    //
+                    //                    case nil, "on": self.activeConversation?.insertText("\(self.originalText.text ?? "does not exist") \n \n\(translation)", completionHandler: nil)
+                    //
+                    //                    case "off": self.activeConversation?.insertText("\(translation)", completionHandler: nil)
+                    //
+                    //                    default:
+                    //                         self.activeConversation?.insertText("default case was used lol")
+                    //                    }
+                    
                     
                     //sets original text to non existant so user can type something else
                     self.originalText.text = ""
@@ -82,61 +128,68 @@ class MessagesViewController: MSMessagesAppViewController {
                     self.requestPresentationStyle(.compact)
                 }
                 
-                
-                
             }
-            
-            
         })
         
     }
     
     //allows for voice recongition
-
+    
     let voiceOverlay = VoiceOverlayController()
     
     @IBAction func spokenTextButton(_ sender: Any) {
-            
         
-        //makes you need to click the mic in the center of the view first to work. If false, automatically starts
-        voiceOverlay.settings.autoStart = false
+        
+        //Determines whether or not the timer autostarts
+//        print("hello \(defaults.string(forKey: "timerAutostartDeciderState"))")
+        if defaults.string(forKey: "timerAutostartDeciderState") == "on" || defaults.string(forKey: "timerAutostartDeciderState") == nil  { //if the switch is on or null
+            voiceOverlay.settings.autoStart = true
+        }
+        else { //if the switch is off
+            voiceOverlay.settings.autoStart = false
+        }
+    
+        
         //Allows the code to end on its own
         voiceOverlay.settings.autoStop = true
-        //after 2 seconds if waiting, the Speech to text (STT) will close
-        voiceOverlay.settings.autoStopTimeout = 2
-           voiceOverlay.start(on: self, textHandler: {text, final, _ in
         
-                    if final{
-                        print("The Final Text: \(text)")
-                            self.originalText.text=text
+        //after 2 seconds if waiting, the Speech to text (STT) will close (based on the value in defaults that was used in the setting view).
+        voiceOverlay.settings.autoStopTimeout = Double(defaults.string(forKey: "timerDeciderStringState") ?? "2") ?? 2
+//        print("double \(defaults.string(forKey: "timerDeciderStringState"))" )
+        
+        voiceOverlay.start(on: self, textHandler: {text, final, _ in
+            
+            if final{
+                print("The Final Text: \(text)")
+                self.originalText.text=text
                 
-                    }
-                    else{
-                        //                print("in progress: \(text)")
-                    }
-        
-                }, errorHandler: {error in
-        
-                })
-}
+            }
+            else{
+                //                print("in progress: \(text)")
+            }
+            
+        }, errorHandler: {error in
+            
+        })
+    }
     //
-//    @IBAction func speechToTextButton(_ sender: Any) {
-//   voiceOverlay.start(on: self, textHandler: {text, final, _ in
-//            
-//            if final{
-//                print("Final text: \(text)")
-//                    self.originalText.text=text
-//            }
-//            else{
-//                //                print("in progress: \(text)")
-//            }
-//            
-//        }, errorHandler: {error in
-//            
-//        })
-//    }
+    //    @IBAction func speechToTextButton(_ sender: Any) {
+    //   voiceOverlay.start(on: self, textHandler: {text, final, _ in
+    //
+    //            if final{
+    //                print("Final text: \(text)")
+    //                    self.originalText.text=text
+    //            }
+    //            else{
+    //                //                print("in progress: \(text)")
+    //            }
+    //
+    //        }, errorHandler: {error in
+    //
+    //        })
+    //    }
     
-
+    
     
     //IT WORKS!!! (basically opens up another view to work with, for select language)
     //    @IBAction func selectLanguageButton(_ sender: Any) {
@@ -144,6 +197,7 @@ class MessagesViewController: MSMessagesAppViewController {
     //
     //    }
     //
+    
     
     @IBAction func SelectLanguageButton(_ sender: Any) {
         guard let vc = storyboard?.instantiateViewController(identifier:
@@ -155,8 +209,21 @@ class MessagesViewController: MSMessagesAppViewController {
         present(vc, animated: true)
     }
     
+    @IBAction func SettingViewController(_ sender: Any) {
+        guard let vc = storyboard?.instantiateViewController(identifier:
+            "SettingView") else {
+                print("failed")
+                return
+        }
+        
+        present(vc, animated: true)
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -182,6 +249,9 @@ class MessagesViewController: MSMessagesAppViewController {
     //        print("sups bruh")
     //
     //    }
+    
+    
+    
     
     
     // MARK: - Conversation Handling

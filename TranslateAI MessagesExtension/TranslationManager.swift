@@ -20,7 +20,7 @@ class TranslationManager: NSObject {
     
     static let shared = TranslationManager()
     var sourceLanguageCode: String?
-    private let apiKey = "AIzaSyBVFNN3FFseO1tcmsGUD7FtQc5tQPatH3g"
+    private let apiKey = "AIzaSyCGZEinYxBx4oGva-6gaBIvXOI4HaRIUIs"
 
     override init() {
         super.init()
@@ -61,19 +61,12 @@ class TranslationManager: NSObject {
                                 do {
 
                                     if let resultsDict = try JSONSerialization.jsonObject(with: results, options: JSONSerialization.ReadingOptions.mutableLeaves) as? [String: Any] {
-
                                         print(resultsDict)
-
                                         completion(resultsDict)
-
                                     }
-
                                 } catch {
-
                                     print(error.localizedDescription)
-
                                 }
-
                             }
 
                         } else {
