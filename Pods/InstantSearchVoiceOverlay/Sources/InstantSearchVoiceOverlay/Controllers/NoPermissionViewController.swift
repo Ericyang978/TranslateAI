@@ -20,6 +20,7 @@ public class NoPermissionViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
+
         let margins = view.layoutMarginsGuide
 
         let goToSettingsButton = FirstPermissionButton(startColor: constants.startGradientColor, endColor: constants.endGradientColor)
@@ -27,6 +28,7 @@ public class NoPermissionViewController: UIViewController {
         let closeView = CloseView()
         
         let subViews = [titleLabel, subtitleLabel, goToSettingsButton, doneWithSettingsButton, closeView]
+        
         
         ViewHelpers.translatesAutoresizingMaskIntoConstraintsFalse(for: subViews)
         ViewHelpers.addSubviews(for: subViews, in: view)
