@@ -14,6 +14,7 @@ class LanguagesViewController: UIViewController {
     
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var languageSearch: UITextField!
     
     // MARK: - Properties
     
@@ -52,7 +53,7 @@ class LanguagesViewController: UIViewController {
     func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.showsVerticalScrollIndicator = false
+        tableView.showsVerticalScrollIndicator = true
         tableView.showsHorizontalScrollIndicator = false
         tableView.backgroundColor = UIColor.clear
         tableView.isScrollEnabled = true
@@ -97,9 +98,9 @@ class LanguagesViewController: UIViewController {
 //         alertCollection.presentAlert(withTitle: "Supported Languages", message: "It seems that supported languages for translation have not been fetched yet. Would you like to get them now?", buttonTitles: ["Yes, fetch supported languages", "Not now"], cancelButtonIndex: 1, destructiveButtonIndices: nil) { (actionIndex) in
 //
              // Check if user wants to fetch supported languages.
-//             if actionIndex == 0 {
+////             if actionIndex == 0 {
                  self.fetchSupportedLanguages()
-//             }
+////             }
          }
      }
 // }
@@ -109,6 +110,43 @@ class LanguagesViewController: UIViewController {
      
         checkForLanguagesExistence()
     }
+    
+    //allows for language search
+    @IBAction func searchLanguage(_ sender: Any) {
+     
+        //holds the value of translationMangers number of elements
+        
+        //first finds the length of supportedLanguages (changes every time the code runs so need a pretermined value
+        let temporaryNum: Int = TranslationManager.shared.supportedLanguages.count
+        
+        //for loop running through the entire array supportedLanguages, goes in reverse so removing elements is not a problem
+        for n in (0..<temporaryNum).reversed(){
+            
+            //creates a temporary string with the translationManager's supported languages
+            guard let temporaryString = TranslationManager.shared.supportedLanguages[n].name
+                                     else{ print("this is bad")
+                                         return}
+//            print("temporary string is \(temporaryString)")
+//            print("the languageSearch text is \(languageSearch.text)")
+//            print("the languageSearch text is lowercase \(languageSearch.text?.lowercased())")
+
+            //checks if the temporarystring has the search word in it, both lowercased so lowercasing does not impact the results of the check
+            if  !( (temporaryString.lowercased().hasPrefix(languageSearch.text?.lowercased() ?? ""))){
+           
+            //creates an index path with item (row) and section, important for latter
+            let indexPath = IndexPath(item: n, section: 0)
+                
+            //Removes first from the data base the table is based off of, the supportedLanguages
+            TranslationManager.shared.supportedLanguages.remove(at: indexPath.row)
+            
+            //performs the actual row deletion
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        }
+//        tableView.numberOfRows(inSection: TranslationManager.shared.supportedLanguages.count-1)
+
+    }
+    
 }
 
   
@@ -122,7 +160,6 @@ extension LanguagesViewController: UITableViewDelegate {
         
           let languageCode  = TranslationManager.shared.supportedLanguages[indexPath.row].code
         defaults.set(languageCode, forKey: "languageCodeKey")
-        print("the string is " + languageCode!)
 
         
         
