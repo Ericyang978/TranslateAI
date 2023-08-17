@@ -20,7 +20,7 @@ class TranslationManager: NSObject {
     
     static let shared = TranslationManager()
     var sourceLanguageCode: String?
-    private let apiKey = "AIzaSyBVFNN3FFseO1tcmsGUD7FtQc5tQPatH3g"
+    private let apiKey = ""
 
     override init() {
         super.init()
